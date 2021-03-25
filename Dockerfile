@@ -1,4 +1,4 @@
-FROM node:12.21-stretch
+FROM library/node:12.21-stretch
 
 COPY app /app
 WORKDIR /app
