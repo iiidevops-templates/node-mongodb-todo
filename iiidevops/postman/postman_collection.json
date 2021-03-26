@@ -27,8 +27,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{test_origin}}",
-					"protocol": "http",
+					"raw": "{{test_origin}}",
 					"host": [
 						"{{test_origin}}"
 					]
@@ -67,8 +66,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{test_origin}}/api/todos",
-					"protocol": "http",
+					"raw": "{{test_origin}}/api/todos",
 					"host": [
 						"{{test_origin}}"
 					],
