@@ -1,6 +1,6 @@
 {
-  "name": "Nodejs 12.21 with mongodb - Todo",
-  "description": "Nodejs 12.21 / Mongodb 4.4-debian-10 <a class='el-link el-link--primary' href='https://github.com/iiidevops-templates/node-mongodb-todo/blob/master/README.md' target='_blank'>Todo 範本說明</a>",
+  "name": "Angular Nodejs 12.21 with mongodb - Todo",
+  "description": "Angular / Nodejs 12.21 / Mongodb 4.4-debian-10 <a class='el-link el-link--primary' href='https://github.com/iiidevops-templates/node-mongodb-todo/blob/master/README.md' target='_blank'>Todo 範本說明</a>",
   "arguments": [
     {
       "key": "db.username",
