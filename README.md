@@ -22,6 +22,7 @@ spring簡易RESTAPI程式碼範例-docker
 | 檔案 | pipeline_settings.json | :warning: (不可更動)devops系統測試所需檔案 | 在iiidevops資料夾內 |
 | 檔案 | postman_collection.json | (可調整)devops newman部屬測試檔案 | iiidevops/postman資料夾內 |
 | 檔案 | postman_environment.json | (可調整)devops newman部屬測試檔案 | iiidevops/postman資料夾內 |
+| 檔案 | app.env | (可調整)devops newman部屬測試檔案 | 在iiidevops資料夾內 |
 | 檔案 | Dockerfile | (可調整)devops k8s環境部屬檔案 | 根目錄 |
 
 ## 開發者注意事項
