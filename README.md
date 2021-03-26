@@ -37,20 +37,24 @@ spring簡易RESTAPI程式碼範例-docker
 
 ## 修改程式碼注意事項
 1. 修改資料庫連線  
-由於系統採用固定獨特的環境變數作為資料庫連線方法, 因此專案的資料庫連線部分請勿更動`app/src/main/resources/application.properties`內的
+由於系統採用固定獨特的環境變數作為資料庫連線方法，因此專案的資料庫連線部分請勿更動`config/server.js`內的  
+或是自行將程式碼修改為讀取相同的環境變數方式也可
 ```
-spring.datasource.url=jdbc:mariadb://${db_host}:3306/${db_name}
-spring.datasource.username=${db_username}
-spring.datasource.password=${db_password}
+var db_username = process.env.db_username
+var db_password = process.env.db_password
+var db_host = process.env.db_host
+var db_name = process.env.db_name
+var database_url = 'mongodb://'+db_username+':'+db_password+'@'+db_host+':27017/'+db_name
+mongoose.connect(database_url)
 ```
 2. 修改環境版本  
-而環境版本若非maven:3.6.3 JDK15, 想要更換環境版本請至`Dockefile`修改為自己想要的版本(如需要本機上做測試則須一併連同`Dockerfile.local`去做修改)
+而環境版本若非node:12.21， 想要更換環境版本請至`Dockefile`修改為自己想要的版本(如需要本機上做測試則須一併連同`Dockerfile.local`去做修改)
 3. 部屬環境額外環境變數
-若開發需求上可能有針對專案需要的特別環境變數，由於目前此需求不再系統開發考慮範圍內，因此可能要麻煩使用者透過修改`Dockerfile`的形式去加入
-```dockerfile
-ENV 環境變數名稱1 值1
-ENV 環境變數名稱2 值2
-ENV 環境變數名稱3 值3
+若開發需求上可能有針對專案需要的特別環境變數，可在`iiidevops/app.env`將自行想要使用的環境變數輸入進入，系統就自動會在部屬時將環境變數增加到前端網站部屬的環境之中
+```
+環境變數名稱1=值1
+環境變數名稱2=值2
+環境變數名稱3=值3
 ```
 
 ## iiidevops
