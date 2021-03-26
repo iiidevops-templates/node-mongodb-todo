@@ -27,8 +27,8 @@ services:
       MONGODB_ROOT_PASSWORD: templatePassword
     volumes:
       - 'mongodb_data:/bitnami/mongodb'
-    volumes:
-      - ./db:/docker-entrypoint-initdb.d:rw
+    #volumes:
+    #  - ./db:/docker-entrypoint-initdb.d:rw
 
   mongo-express:
     image: mongo-express
