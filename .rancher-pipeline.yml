@@ -18,6 +18,42 @@ stages:
       include:
       - master
       - develop
+- name: Test--Sonarqube source code scan
+  steps:
+  - applyAppConfig:
+      answers:
+        git.branch: ${CICD_GIT_BRANCH}
+        git.commitID: ${CICD_GIT_COMMIT}
+        git.repoName: ${CICD_GIT_REPO_NAME}
+        git.url: ${CICD_GIT_URL}
+        pipeline.sequence: ${CICD_EXECUTION_SEQUENCE}
+      catalogTemplate: cattle-global-data:iii-dev-charts3-scan-sonarqube
+      name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-sq
+      targetNamespace: ${CICD_GIT_REPO_NAME}
+      version: 0.1.0
+  when:
+    branch:
+      include:
+      - master
+      - develop
+- name: Test--Checkmarx source code scan
+  steps:
+  - applyAppConfig:
+      answers:
+        git.branch: ${CICD_GIT_BRANCH}
+        git.commitID: ${CICD_GIT_COMMIT}
+        git.repoName: ${CICD_GIT_REPO_NAME}
+        git.url: ${CICD_GIT_URL}
+        pipeline.sequence: ${CICD_EXECUTION_SEQUENCE}
+      catalogTemplate: cattle-global-data:iii-dev-charts3-scan-checkmarx
+      name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-cmx
+      targetNamespace: ${CICD_GIT_REPO_NAME}
+      version: 0.1.0
+  when:
+    branch:
+      include:
+      - master
+      - develop
 - name: Deploy--DB
   steps:
   - applyAppConfig:
