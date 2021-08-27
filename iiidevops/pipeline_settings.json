@@ -1,6 +1,6 @@
 {
   "name": "Angular Node.js with MongoDB - Todo",
-  "description": "Angular / Nodejs 12.21 / Mongodb 4.4-debian-10 <a class='el-link el-link--primary' href='https://github.com/iiidevops-templates/node-mongodb-todo/blob/master/README.md' target='_blank'>Todo 範本說明</a>",
+  "description": "Angular / Nodejs 12.21 / Mongodb 4.4-debian-10 <a class='el-link el-link--primary' href='https://github.com/iiidevops-templates/node-mongodb-todo/blob/master/README.md' target='_blank'>Todo 範本說明</a><hr size=1 /><b>v1.8.0</b><li>支援 SideeX 多測試檔功能<li>彙整 III DevOps Pipeline 相關 Stage 在 UI 統一開關功能",
   "arguments": [
     {
       "key": "db.username",
