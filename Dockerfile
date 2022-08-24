@@ -1,4 +1,4 @@
-FROM dockerhub/library/node:12.21-stretch
+FROM dockerhub/library/node:12.22-stretch
 
 COPY app /app
 WORKDIR /app
