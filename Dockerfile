@@ -1,4 +1,4 @@
-FROM dockerhub/library/node:12.22-stretch
+FROM dockerhub/library/node:16.20.0-bullseye-slim
 
 COPY app /app
 WORKDIR /app
