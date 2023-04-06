@@ -1,4 +1,5 @@
 var Todo = require('./models/todo');
+const mongoose = require('mongoose');
 
 function getTodos(res) {
     Todo.find(function (err, todos) {
@@ -40,8 +41,9 @@ module.exports = function (app) {
 
     // delete a todo
     app.delete('/api/todos/:todo_id', function (req, res) {
+        const todoId = mongoose.Types.ObjectId(req.params.todo_id);
         Todo.remove({
-            _id: req.params.todo_id
+            _id: todoId
         }, function (err, todo) {
             if (err)
                 res.send(err);
